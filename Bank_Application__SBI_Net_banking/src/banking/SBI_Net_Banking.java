@@ -261,31 +261,26 @@ public class SBI_Net_Banking {
 
 							switch(choice) {
 							case 1:
-								System.out.println("Enter your full Name : ");
-								String n = sc.nextLine();
-		
-								System.out.println("Enter the Account Number : ");
-								long an = Long.parseLong(sc.nextLine());
-								sc.nextLine(); // Consume newline left-over
+								System.out.println("Enter your full Name: ");
+								sc.nextLine();
+								String n = sc.nextLine(); // Reads the entire line for name
+								
 
-								System.out.println("Enter the Account balance : ");
-								double bal = Double.parseDouble(sc.nextLine());
-								sc.nextLine(); // Consume newline left-over
+								System.out.println("Enter the Account Number: ");
+								long an = Long.parseLong(sc.nextLine()); // Read account number, then parse it to long
 
-								System.out.println("Enter your Account UserName : ");
-								String aun = sc.nextLine();
+								System.out.println("Enter the Account balance: ");
+								double bal = Double.parseDouble(sc.nextLine()); // Read balance, then parse it to double
+
+								System.out.println("Enter your Account UserName: ");
+								String aun = sc.nextLine(); // Reads the username
 
 								System.out.println("Enter your Account User Password: ");
-								String aup = sc.nextLine();
+								String aup = sc.nextLine(); // Reads the password
 
-								System.out.println("Enter Your account type : ");
-								String at = sc.next();
-								sc.nextLine(); // Consume newline left-over (if needed)
+								System.out.println("Enter Your account type: ");
+								String at = sc.nextLine(); // Use nextLine to read the account type
 
-
-								
-								//Lines skipping here and down update also
-								
 
 								ps3.setString(1,n);
 								ps3.setLong(2, an);
@@ -344,7 +339,7 @@ public class SBI_Net_Banking {
 
 								System.out.println("Enter Account number : ");
 								long acn=sc.nextLong();
-								
+
 								ps6.setLong(1, acn);
 								int k=ps6.executeUpdate();
 								if(k>0) {
@@ -358,7 +353,7 @@ public class SBI_Net_Banking {
 								System.out.println("You are going back to login Menu \n");
 								f=false;
 								break;
-								
+
 							case 6:
 								System.out.println("Operations Ended....");
 								System.exit(0);
