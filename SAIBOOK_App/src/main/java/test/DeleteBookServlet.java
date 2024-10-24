@@ -34,15 +34,15 @@ public class DeleteBookServlet extends HttpServlet {
 					int k=new DeleteBookDAO().delete(bb);
 					System.out.println(k);
 					if(k>0) {
-						al.remove(bb);
+						i.remove();;
 						hs.removeAttribute("al");
 						hs.setAttribute("al", al);
-						req.setAttribute("msg", "Book Deleted Sucessfully...<br>");
-						req.getRequestDispatcher("UpdateBook.jsp").forward(req, res);
-
+						req.setAttribute("msg","<h3 style='color: green;'>Book Deleted Sucessfully....</h3><br>" );
+						req.getRequestDispatcher("ViewBooks.jsp").forward(req, res);
+				
 					}
 					else {
-						req.setAttribute("msg", "An Error Occured ...<br>");
+						req.setAttribute("msg", "<h3 style='color: red;'>An Error Occured...</h3><br>");
 						req.getRequestDispatcher("Msg.jsp").forward(req, res);;
 					}
 				}

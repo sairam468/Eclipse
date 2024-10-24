@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import ="test.*,java.util.*"%>
 <!DOCTYPE html>
 <html>
@@ -18,6 +17,20 @@
             <a href="logout">Logout</a>
         </nav>
         <h2>Book List</h2>
+        <%
+            // Display the message, if any
+            String msg = (String) request.getAttribute("msg");
+            if (msg != null) {
+                out.print(msg);
+            }
+
+            // Retrieve the ArrayList from the session
+            ArrayList<BookBean> al = (ArrayList<BookBean>) session.getAttribute("al");
+
+            if (al == null || al.isEmpty()) {
+                out.println("<p>No books available.</p>");
+            } else {
+        %>
         <table>
             <tr>
                 <th>Book Code</th>
@@ -28,10 +41,10 @@
                 <th>Action</th>
             </tr>
             <%
-            ArrayList al=(ArrayList)session.getAttribute("al");
-            Iterator<BookBean> i=al.iterator();
-        	while(i.hasNext()){
-        		BookBean bb=(BookBean)i.next();
+                // Iterate over the ArrayList and display the book details
+                Iterator<BookBean> i = al.iterator();
+                while (i.hasNext()) {
+                    BookBean bb = i.next();
             %>
             <tr>
                 <td><%= bb.getCode() %></td>
@@ -46,7 +59,9 @@
                 }
             %>
         </table>
+        <%
+            }
+        %>
     </div>
 </body>
 </html>
-

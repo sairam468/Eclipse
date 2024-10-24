@@ -12,11 +12,17 @@
         <h1>SAIBOOKS - Update Book</h1>
     </header>
     <div class="container">
-        <%
-            AdminBean ab = (AdminBean) session.getAttribute("abean");
-            BookBean bb = (BookBean) request.getAttribute("bbean");
-            out.println("Page Belongs to " + ab.getfName() + "<br>");
-        %>
+       <%
+    AdminBean ab = (AdminBean) session.getAttribute("abean");
+    BookBean bb = (BookBean) request.getAttribute("bbean");
+    if (ab != null && bb != null) {
+        out.println("Page Belongs to " + ab.getfName() + "<br>");
+    } else {
+        out.println("<h3 style='color: red;'>Session expired or book details are missing....</h3><br>");
+        return; 
+    }
+%>
+
         <form action="update" method="post">
             <h2>Update Book Details</h2>
             <input type="hidden" name="bcode" value="<%=bb.getCode()%>">

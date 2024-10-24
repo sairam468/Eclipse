@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>User Portal</h1>
+    </header>
+
+    <div class="container">
+        <h2>User Login</h2>
+        <form action="userlogin" method="post">
+            <label for="uname">Username:</label>
+            <input type="text" id="uname" name="uname" placeholder="Enter your username" required><br>
+            
+            <label for="pword">Password:</label>
+            <input type="password" id="pword" name="pword" placeholder="Enter your password" required><br>
+            
+            <input type="submit" value="Login">
+            
+            <p><a href="userRegister.html">New User? Register here</a></p>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Customer Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>

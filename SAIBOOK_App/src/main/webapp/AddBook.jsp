@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Book</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <header>
